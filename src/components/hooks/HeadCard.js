@@ -14,7 +14,11 @@ import {
 const HeadCard = () => {
   return (
     <div className="headCard-container">
-      <Card variant="outlined">
+      <Card variant="outlined"
+      sx={{
+        width: "100%",
+      }}
+      >
         <CardActionArea>
           <CardMedia
             component="img"
@@ -25,7 +29,7 @@ const HeadCard = () => {
         </CardActionArea>
         <CardHeader
           title="Lưu bút của Khoa Nguyễn"
-          titleTypographyProps={{ variant: "h4"}}
+          titleTypographyProps={{ variant: "h5"}}
           sx={{
             borderBottom: 1,
             borderColor: "divider",

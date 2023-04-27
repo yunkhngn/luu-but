@@ -22,7 +22,7 @@ const NameInput = () => {
           >
             Hên xui gặp nhau cho kẹo (con) há há.
           </Typography>
-          <Box sx={{ width: 350}}>
+          <Box sx={{ width: { md: '90%' } }}>
           <TextField id="outlined-basic"   placeholder="Tên nè" variant="outlined" fullWidth
           />
           </Box>

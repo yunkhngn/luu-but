@@ -1,9 +1,46 @@
 .App{
     text-align: left;
     display: block;
-    width: 30%;
     margin: 0 auto;
-    padding: 5em;
+    padding-top:5em;
+    padding-bottom:5em;
+    width: 35%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .App{
+    width: 90vw;
+    padding-top: 3em;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .App{
+    width: 90vw;
+    padding-top: 3em;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .App{
+    width: 60%;
+    padding-top: 3em;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .App{
+    width: 60%;
+    padding-top: 3em;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .App{
+    width: 35%;
+    padding-top: 3em;
+  }
 }
 
 .headCard-container{

@@ -34,7 +34,7 @@ const MultipleChoice = () => {
           <Typography variant="subtitle2" sx={{ pb: 3 }} color="text.secondary">
             Chắc chắn là dzai rồi.
           </Typography>
-          <Box sx={{ width: "80%", pl:3, pr:3 , }}>
+          <Box sx={{ width: { md: '90%' }, pl:3, pr:3 , }}>
             <Slider
               aria-label="Custom marks"
               defaultValue={40}
