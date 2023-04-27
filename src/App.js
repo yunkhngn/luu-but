@@ -4,6 +4,7 @@ import {
   MultipleChoice,
   Form,
   ShortText,
+  Submit,
 } from "./components/hooks";
 import "./App.css";
 
@@ -15,6 +16,7 @@ function App() {
       <MultipleChoice />
       <Form />
       <ShortText />
+      <Submit />
     </div>
   );
 }

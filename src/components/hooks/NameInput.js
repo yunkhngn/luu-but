@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography, TextField } from "@mui/material";
+import { Card, CardContent, Typography, TextField, Box } from "@mui/material";
 // import '../css/NameInput.css'
 
 const NameInput = () => {
@@ -22,8 +22,10 @@ const NameInput = () => {
           >
             Hên xui gặp nhau cho kẹo (con) há há.
           </Typography>
-          <TextField id="outlined-basic" label="tên nè" variant="outlined" fullWidth
+          <Box sx={{ width: 350}}>
+          <TextField id="outlined-basic"   placeholder="Tên nè" variant="outlined" fullWidth
           />
+          </Box>
         </CardContent>
       </Card>
     </div>

@@ -41,10 +41,7 @@ const HeadCard = () => {
           sx={{ borderBottom: 1, borderColor: "divider", pt: 3, pb: 3 }}
         >
           <Typography variant="body1" sx={{ pl: 1, pr: 1 }}>
-            Như cả nhà biết thì năm nay mình cũng gần 18 tủi, sắp là ngừi trưởng
-            thành nên muốn lưu giữ những gì đẹp nhất của tuổi học trò 💛 nếu cả
-            nhà đã bấm vào đây ròi thì đừng ngại gửi gắm một vài sự đáng iu để
-            sau này Ngọc buồn lôi ra đọc cũng ngồi cười hihi nhé
+            Tôy chưa biết viết cái j vào đây
           </Typography>
         </CardContent>
         <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>

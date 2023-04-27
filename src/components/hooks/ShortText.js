@@ -3,8 +3,7 @@ import {
   Card,
   CardContent,
   TextField,
-  TextareaAutosize,
-  Button,
+  Box,
   Typography,
 } from "@mui/material";
 // import '../css/ShortText.css'
@@ -12,11 +11,27 @@ import {
 const ShortText = () => {
   return (
     <div className="shortText-container">
-      <Card variant="outlined">
+     <Card
+        variant="outlined"
+        sx={{
+          p: 1,
+        }}
+      >
         <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Short Text
+          <Typography variant="h6">
+          Bạn có gì muốn gửi tới mình ko.
           </Typography>
+          <Typography variant="subtitle2" sx={{ pb: 3 }} color="text.secondary">
+            Ko thì thui keke.
+          </Typography>
+          <Box sx={{ width: "90%" }}>
+            <TextField
+              id="outlined-textarea"
+              placeholder="Viết di nè"
+              multiline
+              fullWidth
+            />
+          </Box>
         </CardContent>
       </Card>
     </div>

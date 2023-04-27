@@ -3,8 +3,7 @@ import {
   Card,
   CardContent,
   TextField,
-  TextareaAutosize,
-  Button,
+  Box,
   Typography,
 } from "@mui/material";
 import "../css/Form.css";
@@ -12,11 +11,27 @@ import "../css/Form.css";
 const Form = () => {
   return (
     <div className="form-container">
-      <Card variant="outlined">
+      <Card
+        variant="outlined"
+        sx={{
+          p: 1,
+        }}
+      >
         <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            Form
+          <Typography variant="h6">
+            Kỉ niệm của chúng ta, ấn tượng nè.
           </Typography>
+          <Typography variant="subtitle2" sx={{ pb: 3 }} color="text.secondary">
+            Hên xui gặp nhau cho kẹo (con) há há.
+          </Typography>
+          <Box sx={{ width: "90%" }}>
+            <TextField
+              id="outlined-textarea"
+              placeholder="Kỉ niệm gì k"
+              multiline
+              fullWidth
+            />
+          </Box>
         </CardContent>
       </Card>
     </div>
