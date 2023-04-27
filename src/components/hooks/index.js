@@ -1,0 +1,5 @@
+export { default as Form } from './Form'
+export { default as HeadCard } from './HeadCard'
+export { default as MultipleChoice } from './MultipleChoice'
+export { default as NameInput } from './NameInput'
+export { default as ShortText } from './ShortText'
