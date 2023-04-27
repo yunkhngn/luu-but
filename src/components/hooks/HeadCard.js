@@ -49,10 +49,10 @@ const HeadCard = ({show, setShow}) => {
           </Typography>
         </CardContent>
         <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
-          <Button size="small" color="primary" onClick={() => setShow(!show)}>
+          <Button size="small" color="primary" onClick={() => setShow(true)}>
             Bắt đầu thui
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" onClick={() => setShow(false)}>
             Đọc lại thư của cậu
           </Button>
         </CardActions>

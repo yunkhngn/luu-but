@@ -20,7 +20,7 @@ function App() {
       <MultipleChoice show={show}/>
       <Form show={show}/>
       <ShortText show={show}/>
-      <Submit show={show}/>
+      <Submit show={show} setShow={setShow}/>
     </div>
   );
 }

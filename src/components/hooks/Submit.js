@@ -11,7 +11,7 @@ import {
   Collapse
 } from "@mui/material";
 
-const Submit = ({show}) => {
+const Submit = ({show, setShow}) => {
   return (
     <div className="submit-container">
       <Collapse in={show}>
@@ -46,7 +46,7 @@ const Submit = ({show}) => {
         </CardContent>
         <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
           
-          <Button variant="contained">
+          <Button variant="contained" onClick={() => setShow(false)}>
             Send
           </Button>
         </CardActions>
