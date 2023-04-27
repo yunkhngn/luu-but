@@ -8,11 +8,13 @@ import {
   CardActionArea,
   Button,
   Typography,
+  Collapse
 } from "@mui/material";
 
-const Submit = () => {
+const Submit = ({show}) => {
   return (
     <div className="submit-container">
+      <Collapse in={show}>
       <Card variant="outlined">
         <CardHeader
           title="End rùi nè"
@@ -49,6 +51,7 @@ const Submit = () => {
           </Button>
         </CardActions>
       </Card>
+      </Collapse>
     </div>
   );
 };

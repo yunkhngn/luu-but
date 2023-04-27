@@ -5,12 +5,14 @@ import {
   TextField,
   Box,
   Typography,
+  Collapse,
 } from "@mui/material";
 import "../css/Form.css";
 
-const Form = () => {
+const Form = ({show}) => {
   return (
     <div className="form-container">
+      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -34,6 +36,7 @@ const Form = () => {
           </Box>
         </CardContent>
       </Card>
+      </Collapse>
     </div>
   );
 };

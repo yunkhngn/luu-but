@@ -5,12 +5,14 @@ import {
   TextField,
   Box,
   Typography,
+  Collapse,
 } from "@mui/material";
 // import '../css/ShortText.css'
 
-const ShortText = () => {
+const ShortText = ({show}) => {
   return (
     <div className="shortText-container">
+      <Collapse in={show}>
      <Card
         variant="outlined"
         sx={{
@@ -34,6 +36,7 @@ const ShortText = () => {
           </Box>
         </CardContent>
       </Card>
+      </Collapse>
     </div>
   );
 };

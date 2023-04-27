@@ -1,10 +1,11 @@
 import React from "react";
-import { Card, CardContent, Typography, TextField, Box } from "@mui/material";
+import { Card, CardContent, Typography, TextField, Box , Collapse} from "@mui/material";
 // import '../css/NameInput.css'
 
-const NameInput = () => {
+const NameInput = ({show}) => {
   return (
     <div className="nameInput-container">
+      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -28,6 +29,7 @@ const NameInput = () => {
           </Box>
         </CardContent>
       </Card>
+      </Collapse>
     </div>
   );
 };

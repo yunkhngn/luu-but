@@ -1,8 +1,8 @@
 import React from "react";
-import { Card, CardContent, Typography, Slider, Box } from "@mui/material";
+import { Card, CardContent, Typography, Slider, Box, Collapse } from "@mui/material";
 // import '../css/MultipleChoice.css'
 
-const MultipleChoice = () => {
+const MultipleChoice = ({show}) => {
   const marks = [
     {
       value: 0,
@@ -23,6 +23,7 @@ const MultipleChoice = () => {
   ];
   return (
     <div className="multipleChoice-container">
+      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -45,6 +46,7 @@ const MultipleChoice = () => {
           </Box>
         </CardContent>
       </Card>
+      </Collapse>
     </div>
   );
 };
