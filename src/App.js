@@ -6,6 +6,7 @@ import {
   ShortText,
   Submit,
   MusicPlayer,
+  Letter,
 } from "./components/hooks";
 import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
@@ -14,6 +15,7 @@ import "./App.css";
 function App() {
   const [show, setShow] = useState(false);
   const [available, setAvailable] = useState(true);
+  const [showLetter, setShowLetter] = useState(false);
 
   const [data, setData] = useState({
     date : "",
@@ -32,12 +34,13 @@ function App() {
   }, []);
 
   console.clear();
-  console.log(data, available);
+  console.log(data, available, showLetter);
 
   return (
     <div className="App">
-      <HeadCard show={show} setShow={setShow} setData={setData} available={available}/>
+      <HeadCard show={show} setShow={setShow} setData={setData} available={available} setShowLetter={setShowLetter}/>
       {/* <MusicPlayer/> */}
+      <Letter show={show} data={data} showLetter={showLetter}/>
       <NameInput show={show} setData={setData}  data={data}/>
       <MultipleChoice show={show} setData={setData}  data={data}/>
       <Form show={show} setData={setData} data={data}/>

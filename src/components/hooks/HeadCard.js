@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 // import '../css/HeadCard.css'
 
-const HeadCard = ({show, setShow, available}) => {
+const HeadCard = ({show, setShow, available, setShowLetter}) => {
   return (
     <div className="headCard-container">
       <Card variant="outlined"
@@ -52,7 +52,7 @@ const HeadCard = ({show, setShow, available}) => {
           <Button size="small" color="primary" onClick={() => setShow(true)} disabled={!available}>
             Bắt đầu thui
           </Button>
-          <Button size="small" color="primary" onClick={() => setShow(false)}>
+          <Button size="small" color="primary" onClick={() => setShow(false) & setShowLetter(true)} disabled={available}>
             Đọc lại thư của cậu
           </Button>
         </CardActions>

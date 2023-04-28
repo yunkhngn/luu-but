@@ -37,7 +37,7 @@ const ShortText = ({ show, setData, data }) => {
                 multiline
                 fullWidth
                 onChange={(e) =>
-                  setData({ ...data, shortText: e.target.value })
+                  setData({ ...data, message: e.target.value })
                 }
               />
             </Box>

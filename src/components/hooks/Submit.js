@@ -24,12 +24,8 @@ const Submit = ({ show, setShow, setData, data, setAvailable }) => {
     const second = date.getSeconds();
     const time = `${day}/${month}/${year} ${hour}:${minute}:${second}`;
     setData({ ...data, date: time });
-    createLocalStorage();
-    console.log(data);
-  };
-  
-  const createLocalStorage = () => {
-    localStorage.setItem("data", JSON.stringify(data));
+    localStorage.setItem("data", JSON.stringify({ ...data, date: time }));
+    console.log(data, time);
   };
 
   return (
@@ -65,7 +61,7 @@ const Submit = ({ show, setShow, setData, data, setAvailable }) => {
             </Typography>
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
-            <Button variant="contained" onClick={() => submitForm() & setAvailable(false)}>
+            <Button variant="contained" onClick={() => submitForm()}>
               Send
             </Button>
           </CardActions>
