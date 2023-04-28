@@ -7,14 +7,14 @@ import {
   CardActions,
   CardActionArea,
   Button,
-  Fade,
+  Collapse,
   Typography,
 } from "@mui/material";
 // import '../css/Letter.css'
 
 const Letter = ({ show, data, showLetter }) => {
   return (
-    <Fade in={!show & showLetter}>
+    <Collapse in={!show & showLetter}>
       <div className="letter-container">
         <Card
           variant="outlined"
@@ -54,7 +54,7 @@ const Letter = ({ show, data, showLetter }) => {
             </CardContent>
         </Card>
       </div>
-    </Fade>
+    </Collapse>
   );
 };
 
