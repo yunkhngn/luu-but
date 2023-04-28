@@ -6,6 +6,7 @@ import {
   ShortText,
   Submit,
   MusicPlayer,
+  AboutMe,
   Letter,
 } from "./components/hooks";
 import { useState, useEffect } from "react";
@@ -20,6 +21,7 @@ function App() {
   const [data, setData] = useState({
     date : "",
     name: "",
+    about: "",
     handsome: "",
     memories: "",
     message: "",
@@ -42,6 +44,7 @@ function App() {
       {/* <MusicPlayer/> */}
       <Letter show={show} data={data} showLetter={showLetter}/>
       <NameInput show={show} setData={setData}  data={data}/>
+      <AboutMe show={show} setData={setData}  data={data}/>
       <MultipleChoice show={show} setData={setData}  data={data}/>
       <Form show={show} setData={setData} data={data}/>
       <ShortText show={show} setData={setData}  data={data}/>

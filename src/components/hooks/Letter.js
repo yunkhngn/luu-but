@@ -28,10 +28,13 @@ const Letter = ({ show, data, showLetter }) => {
                 <Typography variant="body1" sx={{ pl: 1, pr: 1, fontStyle:"italic" }}>
                     Ngày {data.date.day} tháng {data.date.month} năm {data.date.year}
                     <br/>
-                    {data.date.hour} giờ {data.date.minute}.
+                    {data.date.hour} giờ {data.date.minute} phút.
                     <br/>
                     <br/>
                     Gửi Khoa
+                    <br/>
+                    <br/>
+                    Tớ thấy cậu như thế này: {data.about}
                     <br/>
                     <br/>
                     Có lẽ là mấy năm học cấp ba đã kết thúc, tớ chẳng biết nói gì nữa. Chúng ta có kỉ niệm gì không nhỉ:
