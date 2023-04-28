@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import "../css/Form.css";
 
-const Form = ({show}) => {
+const Form = ({show, setData, data}) => {
   return (
     <div className="form-container">
       <Collapse in={show}>
@@ -32,6 +32,7 @@ const Form = ({show}) => {
               placeholder="Kỉ niệm gì k"
               multiline
               fullWidth
+              onChange={(e) => setData({...data, memories: e.target.value})}
             />
           </Box>
         </CardContent>

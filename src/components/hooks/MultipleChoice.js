@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, Typography, Slider, Box, Collapse } from "@mui/material";
 // import '../css/MultipleChoice.css'
 
-const MultipleChoice = ({show}) => {
+const MultipleChoice = ({show, setData, data}) => {
   const marks = [
     {
       value: 0,
@@ -42,6 +42,7 @@ const MultipleChoice = ({show}) => {
               step={10}
               valueLabelDisplay="auto"
               marks={marks}
+              onChange={(e) => setData({...data, handsome: e.target.value})}
             />
           </Box>
         </CardContent>
