@@ -11,7 +11,7 @@ import {
   Collapse,
 } from "@mui/material";
 
-const Submit = ({ show, setShow, setData, data }) => {
+const Submit = ({ show, setShow, setData, data, setAvailable }) => {
   const submitForm = () => {
     setShow(false)
     //get date
@@ -65,7 +65,7 @@ const Submit = ({ show, setShow, setData, data }) => {
             </Typography>
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
-            <Button variant="contained" onClick={() => submitForm()}>
+            <Button variant="contained" onClick={() => submitForm() & setAvailable(false)}>
               Send
             </Button>
           </CardActions>
