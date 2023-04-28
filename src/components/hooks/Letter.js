@@ -26,6 +26,12 @@ const Letter = ({ show, data, showLetter }) => {
                 sx={{ borderBottom: 1, borderColor: "divider", pt: 3, pb: 3 }}
             >
                 <Typography variant="body1" sx={{ pl: 1, pr: 1 }}>
+                    {data.date}
+                    <br/>
+                    {data.name}
+                    <br/>
+                    {data.memories}
+                    <br/>
                     {data.message}
                 </Typography>
             </CardContent>

@@ -20,11 +20,12 @@ const Submit = ({ show, setShow, setData, data, setAvailable }) => {
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
     const hour = date.getHours();
-    const minute = date.getMinutes();
-    const second = date.getSeconds();
-    const time = `${day}/${month}/${year} ${hour}:${minute}:${second}`;
+    const minute = String(date.getMinutes()).padStart(2, '0');
+    //change minute to 2 digits
+    const time = `${day}/${month}/${year} ${hour}:${minute}`;
     setData({ ...data, date: time });
     localStorage.setItem("data", JSON.stringify({ ...data, date: time }));
+    setAvailable(false);
     console.log(data, time);
   };
 
