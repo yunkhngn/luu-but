@@ -24,8 +24,14 @@ const Submit = ({ show, setShow, setData, data }) => {
     const second = date.getSeconds();
     const time = `${day}/${month}/${year} ${hour}:${minute}:${second}`;
     setData({ ...data, date: time });
+    createLocalStorage();
     console.log(data);
   };
+  
+  const createLocalStorage = () => {
+    localStorage.setItem("data", JSON.stringify(data));
+  };
+
   return (
     <div className="submit-container">
       <Collapse in={show}>

@@ -7,20 +7,26 @@ import {
   Submit,
   MusicPlayer,
 } from "./components/hooks";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 function App() {
   const [show, setShow] = useState(false);
-  
   const [data, setData] = useState({
-    date : "a",
-    name: "b",
-    handsome: "c",
-    memories: "d",
-    message: "d",
+    date : "",
+    name: "",
+    handsome: "",
+    memories: "",
+    message: "",
   });
+  //check if data is on local storage
+  const localData = localStorage.getItem("data");
+  useEffect(() => {
+    if (localData) {
+      setData(JSON.parse(localData));
+    }
+  }, []);
   console.clear();
   console.log(data);
   return (
