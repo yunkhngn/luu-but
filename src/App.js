@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <HeadCard show={show} setShow={setShow} setData={setData} available={available} setShowLetter={setShowLetter}/>
+      <HeadCard show={show} setShow={setShow} setData={setData} available={available} showLetter={showLetter} setShowLetter={setShowLetter}/>
       {/* <MusicPlayer/> */}
       <Letter show={show} data={data} showLetter={showLetter}/>
       <NameInput show={show} setData={setData}  data={data}/>

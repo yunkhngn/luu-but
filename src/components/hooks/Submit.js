@@ -22,7 +22,13 @@ const Submit = ({ show, setShow, setData, data, setAvailable }) => {
     const hour = date.getHours();
     const minute = String(date.getMinutes()).padStart(2, '0');
     //change minute to 2 digits
-    const time = `${day}/${month}/${year} ${hour}:${minute}`;
+    const time = {
+      day: day,
+      month: month,
+      year: year,
+      hour: hour,
+      minute: minute,
+    }
     setData({ ...data, date: time });
     localStorage.setItem("data", JSON.stringify({ ...data, date: time }));
     setAvailable(false);
