@@ -45,7 +45,7 @@ const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
           sx={{ borderBottom: 1, borderColor: "divider", pt: 3, pb: 3 }}
         >
           <Typography variant="body1" sx={{ pl: 1, pr: 1 }}>
-            Web chưa chạy được đâu mn đừng submit 🗿
+            Sắp xong r nè abc
           </Typography>
         </CardContent>
         <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>

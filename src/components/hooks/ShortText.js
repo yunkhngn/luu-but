@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 // import '../css/ShortText.css'
 
-const ShortText = ({ show, setData, data }) => {
+const ShortText = ({ show, setData, data, messageError}) => {
   return (
     <div className="shortText-container">
       <Collapse in={show}>
@@ -32,6 +32,8 @@ const ShortText = ({ show, setData, data }) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={messageError}
+                helperText={messageError ? "Viết di nè" : ""}
                 id="outlined-textarea"
                 placeholder="Viết di nè"
                 multiline

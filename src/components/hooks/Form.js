@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import "../css/Form.css";
 
-const Form = ({show, setData, data}) => {
+const Form = ({show, setData, data, memoriesError}) => {
   return (
     <div className="form-container">
       <Collapse in={show}>
@@ -28,6 +28,8 @@ const Form = ({show, setData, data}) => {
           </Typography>
           <Box sx={{ width: { md: '90%' } }}>
             <TextField
+              error={memoriesError}
+              helperText={memoriesError ? "Kỉ niệm gì k" : ""}
               id="outlined-textarea"
               placeholder="Kỉ niệm gì k"
               multiline

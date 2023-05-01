@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 // import '../css/NameInput.css'
 
-const NameInput = ({ show, data, setData }) => {
+const NameInput = ({ show, data, setData, nameError }) => {
   return (
     <div className="nameInput-container">
       <Collapse in={show}>
@@ -30,6 +30,8 @@ const NameInput = ({ show, data, setData }) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={nameError}
+                helperText={nameError ? "Tên cậu là gì?" : ""}
                 id="outlined-basic"
                 placeholder="Tên nè"
                 variant="outlined"

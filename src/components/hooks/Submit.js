@@ -11,7 +11,36 @@ import {
   Collapse,
 } from "@mui/material";
 
-const Submit = ({ show, setShow, setData, data, setAvailable }) => {
+const Submit = ({ show, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
+  const handleSubmit = () => {
+    if (!data.name) {
+      setNameError(true);
+    }
+    else {
+      setNameError(false);
+    }
+    if (!data.about) {
+      setAboutError(true);
+    }
+    else {
+      setAboutError(false);
+    }
+    if (!data.memories) {
+      setMemoriesError(true);
+    }
+    else {
+      setMemoriesError(false);
+    }
+    if (!data.message) {
+      setMessageError(true);
+    }
+    else {
+      setMessageError(false);
+    }
+    if (data.name && data.about && data.memories && data.message) {
+      submitForm();
+    }
+  };
   const submitForm = () => {
     setShow(false)
     //get date
@@ -68,7 +97,7 @@ const Submit = ({ show, setShow, setData, data, setAvailable }) => {
             </Typography>
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
-            <Button variant="contained" onClick={() => submitForm()}>
+            <Button variant="contained" onClick={() => handleSubmit()}>
               Send
             </Button>
           </CardActions>

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 // import '../css/AboutMe.css'
 
-const AboutMe = ({ show, data, setData }) => {
+const AboutMe = ({ show, data, setData, aboutError }) => {
   return (
     <div className="AboutMe-container">
       <Collapse in={show}>
@@ -30,6 +30,8 @@ const AboutMe = ({ show, data, setData }) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={aboutError}
+                helperText={aboutError ? "Cảm nhận nè nè" : ""}
                 id="outlined-basic"
                 placeholder="Cảm nhận nè nè"
                 variant="outlined"
