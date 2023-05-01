@@ -13,7 +13,7 @@ import {
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 
-const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
+const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
   const handleSubmit = () => {
     if (!data.name) {
       setNameError(true);
@@ -45,8 +45,12 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
   };
   const [authen, setAuthen] = useState(onDevelopmentEnv ? true : false);
 
-  const submitForm = () => {
+  const submitForm = (event) => {
+    //Ẩn form và hiện kết quả
     setShow(false)
+    setShowLetter(true)
+    setAvailable(false);
+
     //get date
     const date = new Date();
     const day = date.getDate();
@@ -54,7 +58,6 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
     const year = date.getFullYear();
     const hour = date.getHours();
     const minute = String(date.getMinutes()).padStart(2, '0');
-    //change minute to 2 digits
     const time = {
       day: day,
       month: month,
@@ -62,9 +65,13 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
       hour: hour,
       minute: minute,
     }
+
+    //set data mới vào data và local storage
     setData({ ...data, date: time });
     localStorage.setItem("data", JSON.stringify({ ...data, date: time }));
-    setAvailable(false);
+
+    //email về email
+    if(!onDevelopmentEnv) {
     emailjs.send("service_bvxrtbi","template_dj51y99",{
       name: {data}.data.name,
       date_day: {time}.time.day,
@@ -77,7 +84,7 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
       message: {data}.data.message,
       point: {data}.data.handsome,
       }, "6mpYFhaV6lVgQsngg");
-    console.log(data, time);
+    }
   };
   return (
     <Collapse in={show}>

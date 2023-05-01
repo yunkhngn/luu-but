@@ -6,6 +6,7 @@ import {
   ShortText,
   Submit,
   MusicPlayer,
+  Thanks,
   LoadingScreen,
   AboutMe,
   Letter,
@@ -15,9 +16,9 @@ import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 function App() {
-  const [show, setShow] = useState(false);
-  const [available, setAvailable] = useState(true);
-  const [showLetter, setShowLetter] = useState(false);
+  const [show, setShow] = useState(false); //show để show form
+  const [available, setAvailable] = useState(true); //available để check xem có thể submit form hay không
+  const [showLetter, setShowLetter] = useState(false); //showLetter để show letter
   const [nameError, setNameError] = useState(false);
   const [aboutError, setAboutError] = useState(false);
   const [memoriesError, setMemoriesError] = useState(false);
@@ -39,21 +40,23 @@ function App() {
       setAvailable(false);
     }
   }, []);
-
   console.clear();
-  console.log(data, available, showLetter, onDevelopmentEnv);
+  console.log("Data: ", data);
+  console.log("Is on development environment: ", onDevelopmentEnv)
+
   return (
     <div className="App">
       <LoadingScreen />
         <HeadCard show={show} setShow={setShow} setData={setData} available={available} showLetter={showLetter} setShowLetter={setShowLetter} />
         {/* <MusicPlayer/> */}
+        <Thanks show={show} available={available} data={data}/>
         <Letter show={show} data={data} showLetter={showLetter} />
         <NameInput nameError={nameError} show={show} setData={setData} data={data} />
         <AboutMe aboutError={aboutError} show={show} setData={setData} data={data} />
         <MultipleChoice show={show} setData={setData} data={data} />
         <Form memoriesError={memoriesError} show={show} setData={setData} data={data} />
         <ShortText messageError={messageError} show={show} setData={setData} data={data} />
-        <Submit onDevelopmentEnv={onDevelopmentEnv} setNameError={setNameError} setAboutError={setAboutError} setMemoriesError={setMemoriesError} setMessageError={setMessageError} show={show} setShow={setShow} setData={setData} data={data} setAvailable={setAvailable} />
+        <Submit onDevelopmentEnv={onDevelopmentEnv} setNameError={setNameError} setAboutError={setAboutError} setMemoriesError={setMemoriesError} setMessageError={setMessageError} show={show} setShow={setShow} setData={setData} data={data} setAvailable={setAvailable} setShowLetter={setShowLetter}/>
         <Analytics />
     </div>
   );
