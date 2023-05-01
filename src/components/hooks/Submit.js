@@ -10,6 +10,8 @@ import {
   Typography,
   Collapse,
 } from "@mui/material";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 const Submit = ({ show, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
   const handleSubmit = () => {
@@ -41,6 +43,10 @@ const Submit = ({ show, setShow, setData, data, setAvailable, setNameError, setA
       submitForm();
     }
   };
+  const onChange = (value) => {
+    console.log("Captcha value:", value);
+  }
+  
   const submitForm = () => {
     setShow(false)
     //get date
@@ -63,7 +69,6 @@ const Submit = ({ show, setShow, setData, data, setAvailable, setNameError, setA
     setAvailable(false);
     console.log(data, time);
   };
-
   return (
     <div className="submit-container">
       <Collapse in={show}>
@@ -97,6 +102,10 @@ const Submit = ({ show, setShow, setData, data, setAvailable, setNameError, setA
             </Typography>
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
+          <ReCAPTCHA
+            sitekey="6LeRHNAlAAAAAD-DMCbFy1ZcTpgnuv-6QGIxnWH-"
+            onChange={onChange}
+          />
             <Button variant="contained" onClick={() => handleSubmit()}>
               Send
             </Button>
