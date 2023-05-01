@@ -11,6 +11,7 @@ import {
   Collapse,
 } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from '@emailjs/browser';
 
 const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
   const handleSubmit = () => {
@@ -64,6 +65,18 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
     setData({ ...data, date: time });
     localStorage.setItem("data", JSON.stringify({ ...data, date: time }));
     setAvailable(false);
+    emailjs.send("service_bvxrtbi","template_dj51y99",{
+      name: {data}.data.name,
+      date_day: {time}.time.day,
+      date_month: {time}.time.month,
+      date_year: {time}.time.year,
+      date_hour: {time}.time.hour,
+      date_minute: {time}.time.minute,
+      about_me:  {data}.data.about,
+      memories: {data}.data.memories,
+      message: {data}.data.message,
+      point: {data}.data.handsome,
+      }, "6mpYFhaV6lVgQsngg");
     console.log(data, time);
   };
   return (
