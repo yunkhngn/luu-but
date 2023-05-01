@@ -74,8 +74,6 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
             title="End rùi nè"
             titleTypographyProps={{ variant: "h6" }}
             sx={{
-              borderBottom: 1,
-              borderColor: "divider",
               pl: 3,
               pr: 3,
               pt: 3,

@@ -5,15 +5,10 @@ const LoadingScreen = () => {
     const [open, setOpen] = useState(true);
     setInterval(() => {
         setOpen(false);
-    }, 1500);
+    }, 600);
     return (
         <Modal
             open={open}
-            onClose={() => setOpen(false)}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            disableEnforceFocus
-            sx={{ borderRadius: 0 }}
         >
             <Box
                 sx={{
