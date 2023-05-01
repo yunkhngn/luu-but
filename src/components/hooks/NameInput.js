@@ -11,8 +11,8 @@ import {
 
 const NameInput = ({ show, data, setData, nameError }) => {
   return (
+    <Collapse in={show}>
     <div className="nameInput-container">
-      <Collapse in={show}>
         <Card
           variant="outlined"
           sx={{
@@ -41,8 +41,8 @@ const NameInput = ({ show, data, setData, nameError }) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

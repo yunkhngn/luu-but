@@ -11,8 +11,8 @@ import {
 
 const AboutMe = ({ show, data, setData, aboutError }) => {
   return (
-    <div className="AboutMe-container">
-      <Collapse in={show}>
+    <Collapse in={show}>
+      <div className="AboutMe-container">
         <Card
           variant="outlined"
           sx={{
@@ -41,8 +41,8 @@ const AboutMe = ({ show, data, setData, aboutError }) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
-    </div>
+      </div>
+    </Collapse >
   );
 };
 

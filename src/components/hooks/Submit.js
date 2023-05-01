@@ -67,8 +67,8 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
     console.log(data, time);
   };
   return (
+    <Collapse in={show}>
     <div className="submit-container">
-      <Collapse in={show}>
         <Card variant="outlined">
           <CardHeader
             title="End rùi nè"
@@ -108,8 +108,8 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
             </Button>
           </CardActions>
         </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

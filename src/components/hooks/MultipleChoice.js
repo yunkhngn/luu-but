@@ -22,8 +22,8 @@ const MultipleChoice = ({show, setData, data}) => {
     },
   ];
   return (
+    <Collapse in={show}>
     <div className="multipleChoice-container">
-      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -47,8 +47,8 @@ const MultipleChoice = ({show, setData, data}) => {
           </Box>
         </CardContent>
       </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

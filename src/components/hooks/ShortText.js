@@ -11,8 +11,8 @@ import {
 
 const ShortText = ({ show, setData, data, messageError}) => {
   return (
+    <Collapse in={show}>
     <div className="shortText-container">
-      <Collapse in={show}>
         <Card
           variant="outlined"
           sx={{
@@ -45,8 +45,8 @@ const ShortText = ({ show, setData, data, messageError}) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

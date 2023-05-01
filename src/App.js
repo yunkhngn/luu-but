@@ -6,6 +6,7 @@ import {
   ShortText,
   Submit,
   MusicPlayer,
+  LoadingScreen,
   AboutMe,
   Letter,
 } from "./components/hooks";
@@ -44,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <LoadingScreen/>
       <HeadCard show={show} setShow={setShow} setData={setData} available={available} showLetter={showLetter} setShowLetter={setShowLetter} />
       {/* <MusicPlayer/> */}
       <Letter show={show} data={data} showLetter={showLetter} />

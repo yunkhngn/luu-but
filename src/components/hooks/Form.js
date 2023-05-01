@@ -11,8 +11,8 @@ import "../css/Form.css";
 
 const Form = ({show, setData, data, memoriesError}) => {
   return (
+    <Collapse in={show}>
     <div className="form-container">
-      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -39,8 +39,8 @@ const Form = ({show, setData, data, memoriesError}) => {
           </Box>
         </CardContent>
       </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

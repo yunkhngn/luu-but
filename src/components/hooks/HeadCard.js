@@ -13,12 +13,12 @@ import {
 
 const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
   return (
-    <div className="headCard-container">
       <Card variant="outlined"
       sx={{
         width: "100%",
       }}
       >
+        <div className="headCard-container">
         <CardActionArea>
           <CardMedia
             component="img"
@@ -56,8 +56,8 @@ const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
             Đọc lại thư của cậu
           </Button>
         </CardActions>
-      </Card>
     </div>
+    </Card>
   );
 };
 
