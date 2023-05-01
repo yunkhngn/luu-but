@@ -21,6 +21,7 @@ function App() {
   const [aboutError, setAboutError] = useState(false);
   const [memoriesError, setMemoriesError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+  const onDevelopmentEnv = process.env.NODE_ENV === "development";
   const [data, setData] = useState({
     date: "",
     name: "",
@@ -39,7 +40,7 @@ function App() {
   }, []);
 
   console.clear();
-  console.log(data, available, showLetter);
+  console.log(data, available, showLetter, onDevelopmentEnv);
 
   return (
     <div className="App">
@@ -51,7 +52,7 @@ function App() {
       <MultipleChoice show={show} setData={setData} data={data} />
       <Form memoriesError={memoriesError} show={show} setData={setData} data={data} />
       <ShortText messageError={messageError} show={show} setData={setData} data={data} />
-      <Submit setNameError={setNameError} setAboutError={setAboutError} setMemoriesError={setMemoriesError} setMessageError={setMessageError} show={show} setShow={setShow} setData={setData} data={data} setAvailable={setAvailable} />
+      <Submit onDevelopmentEnv={onDevelopmentEnv} setNameError={setNameError} setAboutError={setAboutError} setMemoriesError={setMemoriesError} setMessageError={setMessageError} show={show} setShow={setShow} setData={setData} data={data} setAvailable={setAvailable} />
       <Analytics />
     </div>
   );
