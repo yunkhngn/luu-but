@@ -94,16 +94,16 @@ const Submit = ({ show, onDevelopmentEnv, setShow, setData, data, setAvailable, 
           <CardContent
             sx={{ borderBottom: 1, borderColor: "divider", pt: 3, pb: 3 }}
           >
-            <Typography variant="body1" sx={{ pl: 1, pr: 1 }}>
+            <Typography variant="body1" sx={{ pl: 1, pr: 1 , mb: 1}}>
               Cái này cũng v
             </Typography>
+            <ReCAPTCHA
+              sitekey="6LeRHNAlAAAAAD-DMCbFy1ZcTpgnuv-6QGIxnWH-"
+              onChange={() => setAuthen(true)}
+            />
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
-          <ReCAPTCHA
-            sitekey="6LeRHNAlAAAAAD-DMCbFy1ZcTpgnuv-6QGIxnWH-"
-            onChange={() => setAuthen(true)}
-          />
-            <Button variant="contained" onClick={() => handleSubmit()}>
+          <Button variant="contained" onClick={() => handleSubmit()}>
               Send
             </Button>
           </CardActions>
