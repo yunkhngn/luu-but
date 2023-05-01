@@ -10,6 +10,7 @@ import {
   Collapse,
   Typography,
 } from "@mui/material";
+import dc from "../lib/DataConfig";
 
 const Thanks = ({ show, data, available }) => {
   return (
@@ -25,7 +26,7 @@ const Thanks = ({ show, data, available }) => {
                 sx={{pt: 3, pb: 3 }}
             >
                 <Typography variant="body1" sx={{ pl: 1, pr: 1, fontStyle:"italic" }}>
-                   Cảm ơn cậu
+                    {dc.thanks.message} 
                 </Typography>
             </CardContent>
         </Card>

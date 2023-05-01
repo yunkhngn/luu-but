@@ -7,7 +7,7 @@ import {
   Box,
   Collapse,
 } from "@mui/material";
-// import '../css/NameInput.css'
+import dc from "../lib/DataConfig";
 
 const NameInput = ({ show, data, setData, nameError }) => {
   return (
@@ -21,20 +21,22 @@ const NameInput = ({ show, data, setData, nameError }) => {
           }}
         >
           <CardContent>
-            <Typography variant="h6">Tên cậu là gì?</Typography>
+            <Typography variant="h6">
+              {dc.nameInput.title}
+            </Typography>
             <Typography
               variant="subtitle2"
               sx={{ pb: 3 }}
               color="text.secondary"
             >
-              Hên xui gặp nhau cho kẹo (con) há há.
+              {dc.nameInput.subtitle}
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
                 error={nameError}
-                helperText={nameError ? "Tên cậu là gì?" : ""}
+                helperText={nameError ? dc.nameInput.nameError : ""}
                 id="outlined-basic"
-                placeholder="Tên nè"
+                placeholder={dc.nameInput.placeholder}
                 variant="outlined"
                 fullWidth
                 onChange={(e) => setData({ ...data, name: e.target.value })}

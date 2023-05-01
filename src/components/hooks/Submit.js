@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
+import dc from "../lib/DataConfig";
 
 const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
   const handleSubmit = () => {
@@ -91,29 +92,29 @@ const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, 
     <div className="submit-container">
         <Card variant="outlined">
           <CardHeader
-            title="End rùi nè"
+            title={dc.submit.title}
             titleTypographyProps={{ variant: "h6" }}
             sx={{
               pl: 3,
               pr: 3,
               pt: 3,
             }}
-            subheader="Chưa nghĩ ra j để viết ở đây"
+            subheader={dc.submit.subheader}
             subheaderTypographyProps={{ variant: "subtitle2" }}
           />
           <CardActionArea>
             <CardMedia
               component="img"
               height="194"
-              image="https://wallpapers.com/images/featured/vmdj9lfm2un8rji3.jpg"
-              alt="Paella dish"
+              image={dc.submit.image}
+              alt="Klee"
             />
           </CardActionArea>
           <CardContent
             sx={{ borderBottom: 1, borderColor: "divider", pt: 3, pb: 3 }}
           >
             <Typography variant="body1" sx={{ pl: 1, pr: 1 , mb: 1}}>
-              Cái này cũng v
+              {dc.submit.content}
             </Typography>
             <ReCAPTCHA
               sitekey="6LeRHNAlAAAAAD-DMCbFy1ZcTpgnuv-6QGIxnWH-"
@@ -122,7 +123,7 @@ const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, 
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
           <Button variant="contained" onClick={() => handleSubmit()}>
-              Send
+            {dc.submit.button}
             </Button>
           </CardActions>
         </Card>

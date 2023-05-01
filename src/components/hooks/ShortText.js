@@ -7,7 +7,7 @@ import {
   Typography,
   Collapse,
 } from "@mui/material";
-// import '../css/ShortText.css'
+import dc from "../lib/DataConfig";
 
 const ShortText = ({ show, setData, data, messageError}) => {
   return (
@@ -21,21 +21,21 @@ const ShortText = ({ show, setData, data, messageError}) => {
         >
           <CardContent>
             <Typography variant="h6">
-              Bạn có gì muốn gửi tới mình ko.
+              {dc.message.title}
             </Typography>
             <Typography
               variant="subtitle2"
               sx={{ pb: 3 }}
               color="text.secondary"
             >
-              Ko thì thui keke.
+              {dc.message.subtitle} 
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
                 error={messageError}
-                helperText={messageError ? "Viết di nè" : ""}
+                helperText={messageError ? dc.message.messageError : ""}
                 id="outlined-textarea"
-                placeholder="Viết di nè"
+                placeholder={dc.message.placeholder}
                 multiline
                 fullWidth
                 onChange={(e) =>
