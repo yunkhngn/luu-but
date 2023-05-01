@@ -11,14 +11,14 @@ import {
 } from "@mui/material";
 // import '../css/HeadCard.css'
 
-const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
+const HeadCard = ({ show, setShow, available, setShowLetter, showLetter }) => {
   return (
-      <Card variant="outlined"
+    <Card variant="outlined"
       sx={{
         width: "100%",
       }}
-      >
-        <div className="headCard-container">
+    >
+      <div className="headCard-container">
         <CardActionArea>
           <CardMedia
             component="img"
@@ -29,7 +29,7 @@ const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
         </CardActionArea>
         <CardHeader
           title="Lưu bút của Khoa Nguyễn"
-          titleTypographyProps={{ variant: "h5"}}
+          titleTypographyProps={{ variant: "h5" }}
           sx={{
             borderBottom: 1,
             borderColor: "divider",
@@ -48,7 +48,7 @@ const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
             Sắp xong r nè abc
           </Typography>
         </CardContent>
-        <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
+        <CardActions sx={{ pl: 2, pr: 2, pt: 2, pb: 2 }}>
           <Button size="small" color="primary" onClick={() => setShow(!show)} disabled={!available}>
             Bắt đầu thui
           </Button>
@@ -56,7 +56,7 @@ const HeadCard = ({show, setShow, available, setShowLetter, showLetter}) => {
             Đọc lại thư của cậu
           </Button>
         </CardActions>
-    </div>
+      </div>
     </Card>
   );
 };
