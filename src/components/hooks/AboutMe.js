@@ -7,12 +7,12 @@ import {
   Box,
   Collapse,
 } from "@mui/material";
-// import '../css/AboutMe.css'
+import dc from "../lib/DataConfig";
 
-const AboutMe = ({ show, data, setData }) => {
+const AboutMe = ({ show, data, setData, aboutError }) => {
   return (
-    <div className="AboutMe-container">
-      <Collapse in={show}>
+    <Collapse in={show}>
+      <div className="AboutMe-container">
         <Card
           variant="outlined"
           sx={{
@@ -20,18 +20,20 @@ const AboutMe = ({ show, data, setData }) => {
           }}
         >
           <CardContent>
-            <Typography variant="h6">Cảm nhận của cậu về tớ?</Typography>
+            <Typography variant="h6">{dc.aboutMe.title}</Typography>
             <Typography
               variant="subtitle2"
               sx={{ pb: 3 }}
               color="text.secondary"
             >
-              Hên xui gặp nhau cho kẹo (con) há há.
+              {dc.aboutMe.subtitle}
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={aboutError}
+                helperText={aboutError ? dc.aboutMe.aboutError : ""}
                 id="outlined-basic"
-                placeholder="Cảm nhận nè nè"
+                placeholder={dc.aboutMe.placeholder}
                 variant="outlined"
                 fullWidth
                 onChange={(e) => setData({ ...data, about: e.target.value })}
@@ -39,8 +41,8 @@ const AboutMe = ({ show, data, setData }) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
-    </div>
+      </div>
+    </Collapse >
   );
 };
 

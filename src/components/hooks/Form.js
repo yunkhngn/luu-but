@@ -8,11 +8,12 @@ import {
   Collapse,
 } from "@mui/material";
 import "../css/Form.css";
+import dc from "../lib/DataConfig";
 
-const Form = ({show, setData, data}) => {
+const Form = ({show, setData, data, memoriesError}) => {
   return (
+    <Collapse in={show}>
     <div className="form-container">
-      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -21,15 +22,17 @@ const Form = ({show, setData, data}) => {
       >
         <CardContent>
           <Typography variant="h6">
-            Kỉ niệm của chúng ta.
+            {dc.memories.title}
           </Typography>
           <Typography variant="subtitle2" sx={{ pb: 3 }} color="text.secondary">
-            Hên xui gặp nhau cho kẹo (con) há há.
+            {dc.memories.subtitle}
           </Typography>
           <Box sx={{ width: { md: '90%' } }}>
             <TextField
+              error={memoriesError}
+              helperText={memoriesError ? dc.memories.memoriesError : ""}
               id="outlined-textarea"
-              placeholder="Kỉ niệm gì k"
+              placeholder={dc.memories.placeholder}
               multiline
               fullWidth
               onChange={(e) => setData({...data, memories: e.target.value})}
@@ -37,8 +40,8 @@ const Form = ({show, setData, data}) => {
           </Box>
         </CardContent>
       </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

@@ -1,29 +1,29 @@
 import React from "react";
 import { Card, CardContent, Typography, Slider, Box, Collapse } from "@mui/material";
-// import '../css/MultipleChoice.css'
+import dc from "../lib/DataConfig";
 
 const MultipleChoice = ({show, setData, data}) => {
   const marks = [
     {
       value: 0,
-      label: "Nah",
+      label: dc.handsome.label.one,
     },
     {
       value: 40,
-      label: "Hong bit",
+      label: dc.handsome.label.fouth,
     },
     {
       value: 70,
-      label: "Cũng ổn",
+      label: dc.handsome.label.sixth,
     },
     {
       value: 100,
-      label: "Tuyệt vời",
+      label: dc.handsome.label.full,
     },
   ];
   return (
+    <Collapse in={show}>
     <div className="multipleChoice-container">
-      <Collapse in={show}>
       <Card
         variant="outlined"
         sx={{
@@ -31,9 +31,9 @@ const MultipleChoice = ({show, setData, data}) => {
         }}
       >
         <CardContent>
-          <Typography variant="h6">Tớ dzai chứ 🫠</Typography>
+          <Typography variant="h6">{dc.handsome.title}</Typography>
           <Typography variant="subtitle2" sx={{ pb: 3 }} color="text.secondary">
-            Chắc chắn là dzai rồi.
+            {dc.handsome.subtitle}
           </Typography>
           <Box sx={{ width: { md: '90%' }, pl:3, pr:3 , }}>
             <Slider
@@ -47,8 +47,8 @@ const MultipleChoice = ({show, setData, data}) => {
           </Box>
         </CardContent>
       </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

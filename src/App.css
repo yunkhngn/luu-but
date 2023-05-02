@@ -6,6 +6,17 @@
     padding-bottom:5em;
     width: 35%;
 }
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -46,7 +57,6 @@
 .headCard-container{
   display: block;
   width: 100%;
-  margin-bottom: 2em;
 }
 
 .music-container{
@@ -59,6 +69,7 @@
   display: block;
   width: 100%;
   margin-bottom: 2em;
+  margin-top: 2em;
 }
 
 .multipleChoice-container{
@@ -83,7 +94,9 @@
   display: block;
   width: 100%;
   margin-bottom: 2em;
+  margin-top: 2em;
 }
+
 .AboutMe-container{
   display: block;
   width: 100%;

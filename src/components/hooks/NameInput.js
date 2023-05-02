@@ -7,31 +7,36 @@ import {
   Box,
   Collapse,
 } from "@mui/material";
-// import '../css/NameInput.css'
+import dc from "../lib/DataConfig";
 
-const NameInput = ({ show, data, setData }) => {
+const NameInput = ({ show, data, setData, nameError }) => {
   return (
+    <Collapse in={show}>
     <div className="nameInput-container">
-      <Collapse in={show}>
         <Card
           variant="outlined"
           sx={{
             p: 1,
+            mt:3,
           }}
         >
           <CardContent>
-            <Typography variant="h6">Tên cậu là gì?</Typography>
+            <Typography variant="h6">
+              {dc.nameInput.title}
+            </Typography>
             <Typography
               variant="subtitle2"
               sx={{ pb: 3 }}
               color="text.secondary"
             >
-              Hên xui gặp nhau cho kẹo (con) há há.
+              {dc.nameInput.subtitle}
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={nameError}
+                helperText={nameError ? dc.nameInput.nameError : ""}
                 id="outlined-basic"
-                placeholder="Tên nè"
+                placeholder={dc.nameInput.placeholder}
                 variant="outlined"
                 fullWidth
                 error
@@ -41,8 +46,8 @@ const NameInput = ({ show, data, setData }) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 

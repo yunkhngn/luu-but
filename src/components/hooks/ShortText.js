@@ -7,12 +7,12 @@ import {
   Typography,
   Collapse,
 } from "@mui/material";
-// import '../css/ShortText.css'
+import dc from "../lib/DataConfig";
 
-const ShortText = ({ show, setData, data }) => {
+const ShortText = ({ show, setData, data, messageError}) => {
   return (
+    <Collapse in={show}>
     <div className="shortText-container">
-      <Collapse in={show}>
         <Card
           variant="outlined"
           sx={{
@@ -21,19 +21,21 @@ const ShortText = ({ show, setData, data }) => {
         >
           <CardContent>
             <Typography variant="h6">
-              Bạn có gì muốn gửi tới mình ko.
+              {dc.message.title}
             </Typography>
             <Typography
               variant="subtitle2"
               sx={{ pb: 3 }}
               color="text.secondary"
             >
-              Ko thì thui keke.
+              {dc.message.subtitle} 
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
+                error={messageError}
+                helperText={messageError ? dc.message.messageError : ""}
                 id="outlined-textarea"
-                placeholder="Viết di nè"
+                placeholder={dc.message.placeholder}
                 multiline
                 fullWidth
                 onChange={(e) =>
@@ -43,8 +45,8 @@ const ShortText = ({ show, setData, data }) => {
             </Box>
           </CardContent>
         </Card>
-      </Collapse>
     </div>
+    </Collapse>
   );
 };
 
