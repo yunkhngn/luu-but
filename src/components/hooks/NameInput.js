@@ -34,6 +34,8 @@ const NameInput = ({ show, data, setData }) => {
                 placeholder="Tên nè"
                 variant="outlined"
                 fullWidth
+                error
+                helperText="*Tên không được để trống"
                 onChange={(e) => setData({ ...data, name: e.target.value })}
               />
             </Box>
