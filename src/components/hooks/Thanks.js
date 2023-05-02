@@ -26,7 +26,7 @@ const Thanks = ({ show, data, available }) => {
                 sx={{pt: 3, pb: 3 }}
             >
                 <Typography variant="body1" sx={{ pl: 1, pr: 1, fontStyle:"italic" }}>
-                    {dc.thanks.message} 
+                    {dc.thanks.content} 
                 </Typography>
             </CardContent>
         </Card>
