@@ -39,9 +39,9 @@ const NameInput = ({ show, data, setData, nameError }) => {
                 placeholder={dc.nameInput.placeholder}
                 variant="outlined"
                 fullWidth
-                error
                 helperText="*Tên không được để trống"
                 onChange={(e) => setData({ ...data, name: e.target.value })}
+                error={nameError}
               />
             </Box>
           </CardContent>
