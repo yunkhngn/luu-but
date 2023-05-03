@@ -128,9 +128,12 @@ const Submit = ({
               ></HCaptcha>
             </Box>
           </CardContent>
-          <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
+          <CardActions sx={{ pl: 3, pr: 3, pb: 3, pt: 3 }}>
             <Button endIcon={<SendRoundedIcon />} variant="outlined" onClick={() => handleSubmit()}>
               {dc.submit.button}
+            </Button>
+            <Button variant="text" onClick={()=>{window.scrollTo({ top: 750, behavior: "smooth" })}}>
+              Xem lại
             </Button>
           </CardActions>
         </Card>
