@@ -17,7 +17,6 @@ const NameInput = ({ show, data, setData }) => {
           variant="outlined"
           sx={{
             p: 1,
-            mt:3,
           }}
         >
           <CardContent>

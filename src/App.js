@@ -52,7 +52,7 @@ function App() {
         available={available}
         showLetter={showLetter}
         setShowLetter={setShowLetter} />
-      {/* <MusicPlayer/> */}
+      <MusicPlayer/>
       <Thanks show={show} available={available} data={data} />
       <Letter show={show} data={data} showLetter={showLetter} />
       <NameInput nameError={nameError} show={show} setData={setData} data={data} />
