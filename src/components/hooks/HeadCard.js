@@ -16,6 +16,7 @@ const HeadCard = ({ show, setShow, available, setShowLetter, showLetter }) => {
     <Card variant="outlined"
       sx={{
         width: "100%",
+        // backgroundColor: "defaultBg.default",
       }}
     >
       <div className="headCard-container">

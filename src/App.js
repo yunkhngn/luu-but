@@ -7,7 +7,6 @@ import {
   Submit,
   MusicPlayer,
   Thanks,
-  LoadingScreen,
   AboutMe,
   Letter,
   Theme,
@@ -47,7 +46,6 @@ function App() {
 
   return (
     <Theme>
-      <LoadingScreen />
       <HeadCard show={show}
         setShow={setShow}
         setData={setData}
