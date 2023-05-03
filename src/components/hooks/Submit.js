@@ -14,9 +14,9 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 import dc from "../lib/DataConfig";
 
-const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
+const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAvailable, available }) => {
   const handleSubmit = () => {
-    if (data.name && data.about && data.memories && data.message && authen) {
+    if (data.name.length >=2 && data.about.length >=5  && data.memories.length >=5  && data.message.length >=5  && authen) {
       submitForm();
     }
     else {
@@ -67,7 +67,7 @@ const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAva
     }
   };
   return (
-    <Collapse in={data.message !== "" && data.message !== undefined ? true : false}>
+    <Collapse in={available && data.message !== "" && data.message !== undefined ? true : false}>
     <div className="submit-container">
         <Card variant="outlined">
           <CardHeader

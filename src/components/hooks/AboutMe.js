@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const AboutMe = ({data, setData, aboutError }) => {
+const AboutMe = ({data, setData, available }) => {
   return (
-    <Collapse in={data.name !== "" && data.name !== undefined ? true : false}>
+    <Collapse in={available && data.name !== "" && data.name !== undefined ? true : false}>
       <div className="AboutMe-container">
         <Card
           variant="outlined"

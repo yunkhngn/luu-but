@@ -56,10 +56,10 @@ function App() {
       <Thanks show={show} available={available} data={data} />
       <Letter show={show} data={data} showLetter={showLetter} />
       <NameInput nameError={nameError} show={show} setData={setData} data={data} />
-      <AboutMe aboutError={aboutError} show={show} setData={setData} data={data} />
-      <MultipleChoice show={show} setData={setData} data={data} />
-      <Form memoriesError={memoriesError} show={show} setData={setData} data={data} />
-      <ShortText messageError={messageError} show={show} setData={setData} data={data} />
+      <AboutMe available={available} aboutError={aboutError} show={show} setData={setData} data={data} />
+      <MultipleChoice available={available} show={show} setData={setData} data={data} />
+      <Form available={available} memoriesError={memoriesError} show={show} setData={setData} data={data} />
+      <ShortText available={available} messageError={messageError} show={show} setData={setData} data={data} />
       <Submit onDevelopmentEnv={onDevelopmentEnv}
         setNameError={setNameError}
         setAboutError={setAboutError}
@@ -69,6 +69,7 @@ function App() {
         setShow={setShow}
         setData={setData}
         data={data}
+        available={available}
         setAvailable={setAvailable}
         setShowLetter={setShowLetter} />
       <Analytics />

@@ -10,9 +10,9 @@ import {
 import "../css/Form.css";
 import dc from "../lib/DataConfig";
 
-const Form = ({setData, data, memoriesError}) => {
+const Form = ({setData, data, available}) => {
   return (
-    <Collapse in={data.about !== "" && data.about !== undefined ? true : false}>
+    <Collapse in={available && data.about !== "" && data.about !== undefined ? true : false}>
     <div className="form-container">
       <Card
         variant="outlined"

@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const ShortText = ({setData, data, messageError}) => {
+const ShortText = ({setData, data, available}) => {
   return (
-    <Collapse in={data.memories !== "" && data.memories !== undefined ? true : false}>
+    <Collapse in={available && data.memories !== "" && data.memories !== undefined ? true : false}>
     <div className="shortText-container">
         <Card
           variant="outlined"

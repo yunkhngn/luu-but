@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, Typography, Slider, Box, Collapse } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const MultipleChoice = ({setData, data}) => {
+const MultipleChoice = ({setData, data, available}) => {
   const marks = [
     {
       value: 0,
@@ -22,7 +22,7 @@ const MultipleChoice = ({setData, data}) => {
     },
   ];
   return (
-    <Collapse in={data.name !== "" && data.name !== undefined ? true : false}>
+    <Collapse in={available && data.name !== "" && data.name !== undefined ? true : false}>
     <div className="multipleChoice-container">
       <Card
         variant="outlined"
