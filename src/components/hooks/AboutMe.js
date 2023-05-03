@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const AboutMe = ({ show, data, setData, aboutError }) => {
+const AboutMe = ({data, setData, aboutError }) => {
   return (
-    <Collapse in={show}>
+    <Collapse in={data.name !== "" && data.name !== undefined ? true : false}>
       <div className="AboutMe-container">
         <Card
           variant="outlined"
@@ -30,8 +30,8 @@ const AboutMe = ({ show, data, setData, aboutError }) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
-                error={aboutError}
-                helperText={aboutError ? dc.aboutMe.aboutError : ""}
+                error={data.about.length < 5 && data.about.length !== 0}
+                helperText={data.about.length < 5 && data.about.length !== 0 ? dc.aboutMe.aboutError : "" }
                 id="outlined-basic"
                 placeholder={dc.aboutMe.placeholder}
                 variant="outlined"

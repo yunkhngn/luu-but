@@ -14,34 +14,13 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 import dc from "../lib/DataConfig";
 
-const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
+const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAvailable, setNameError, setAboutError, setHandsomeError, setMemoriesError, setMessageError }) => {
   const handleSubmit = () => {
-    if (!data.name) {
-      setNameError(true);
-    }
-    else {
-      setNameError(false);
-    }
-    if (!data.about) {
-      setAboutError(true);
-    }
-    else {
-      setAboutError(false);
-    }
-    if (!data.memories) {
-      setMemoriesError(true);
-    }
-    else {
-      setMemoriesError(false);
-    }
-    if (!data.message) {
-      setMessageError(true);
-    }
-    else {
-      setMessageError(false);
-    }
     if (data.name && data.about && data.memories && data.message && authen) {
       submitForm();
+    }
+    else {
+      alert ("Bạn chưa điền đủ thông tin hoặc chưa xác nhận captcha")
     }
   };
   const [authen, setAuthen] = useState(onDevelopmentEnv ? true : false);
@@ -88,7 +67,7 @@ const Submit = ({setShowLetter, show, onDevelopmentEnv, setShow, setData, data, 
     }
   };
   return (
-    <Collapse in={show}>
+    <Collapse in={data.message !== "" && data.message !== undefined ? true : false}>
     <div className="submit-container">
         <Card variant="outlined">
           <CardHeader

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const NameInput = ({ show, data, setData, nameError }) => {
+const NameInput = ({ show, data, setData }) => {
   return (
     <Collapse in={show}>
     <div className="nameInput-container">
@@ -33,8 +33,8 @@ const NameInput = ({ show, data, setData, nameError }) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
-                error={nameError}
-                helperText={nameError ? dc.nameInput.nameError : ""}
+                error={data.name.length < 2 && data.name.length !== 0}
+                helperText={data.name.length < 2 && data.name.length !== 0 ? dc.nameInput.nameError : "" }
                 id="outlined-basic"
                 placeholder={dc.nameInput.placeholder}
                 variant="outlined"

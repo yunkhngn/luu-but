@@ -10,9 +10,9 @@ import {
 import "../css/Form.css";
 import dc from "../lib/DataConfig";
 
-const Form = ({show, setData, data, memoriesError}) => {
+const Form = ({setData, data, memoriesError}) => {
   return (
-    <Collapse in={show}>
+    <Collapse in={data.about !== "" && data.about !== undefined ? true : false}>
     <div className="form-container">
       <Card
         variant="outlined"
@@ -29,8 +29,8 @@ const Form = ({show, setData, data, memoriesError}) => {
           </Typography>
           <Box sx={{ width: { md: '90%' } }}>
             <TextField
-              error={memoriesError}
-              helperText={memoriesError ? dc.memories.memoriesError : ""}
+              error={data.memories.length < 5 && data.memories.length !== 0}
+              helperText={data.memories.length < 5 && data.memories.length !== 0 ? dc.memories.memoriesError : "" }
               id="outlined-textarea"
               placeholder={dc.memories.placeholder}
               multiline

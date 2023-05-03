@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import dc from "../lib/DataConfig";
 
-const ShortText = ({ show, setData, data, messageError}) => {
+const ShortText = ({setData, data, messageError}) => {
   return (
-    <Collapse in={show}>
+    <Collapse in={data.memories !== "" && data.memories !== undefined ? true : false}>
     <div className="shortText-container">
         <Card
           variant="outlined"
@@ -32,8 +32,8 @@ const ShortText = ({ show, setData, data, messageError}) => {
             </Typography>
             <Box sx={{ width: { md: "90%" } }}>
               <TextField
-                error={messageError}
-                helperText={messageError ? dc.message.messageError : ""}
+                error={data.message.length < 5 && data.message.length !== 0}
+                helperText={data.message.length < 5 && data.message.length !== 0 ? dc.message.messageError : "" }
                 id="outlined-textarea"
                 placeholder={dc.message.placeholder}
                 multiline
