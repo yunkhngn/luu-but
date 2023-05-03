@@ -10,9 +10,9 @@ import {
   Typography,
   Collapse,
 } from "@mui/material";
-import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
 import dc from "../lib/DataConfig";
+import HCaptcha from "react-hcaptcha";
 
 const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAvailable, available }) => {
   const handleSubmit = () => {
@@ -67,7 +67,8 @@ const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAva
     }
   };
   return (
-    <Collapse in={available && data.message !== "" && data.message !== undefined ? true : false}>
+    // available && data.message !== "" && data.message !== undefined ? true : false
+    <Collapse in={true}>
     <div className="submit-container">
         <Card variant="outlined">
           <CardHeader
@@ -98,10 +99,13 @@ const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAva
               <br/>
               {dc.submit.content2}
             </Typography>
-            <ReCAPTCHA
-              sitekey="6LfrgtslAAAAAO-UfwWamzGtH1lK3lCyWkBjya6F"
-              onChange={() => setAuthen(true)}
-            />
+            <HCaptcha
+            sitekey="31677f64-0983-4d5f-afcf-bcb06e4a6bc6"
+            onVerify={(token, ekey) => {
+              setAuthen(true);
+            }}
+            >
+            </HCaptcha>
           </CardContent>
           <CardActions sx={{ pl: 2, pr: 2, pb: 2, pt: 2 }}>
           <Button variant="contained" onClick={() => handleSubmit()}>
