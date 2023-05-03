@@ -2,11 +2,8 @@ import React from "react";
 import {
   Card,
   CardContent,
-  CardHeader,
   CardMedia,
-  CardActions,
   CardActionArea,
-  Button,
   Collapse,
   Typography,
 } from "@mui/material";
@@ -25,7 +22,7 @@ const Letter = ({ show, data, showLetter }) => {
             <CardContent
                 sx={{pt: 3, pb: 3 }}
             >
-                <Typography variant="body1" sx={{ pl: 1, pr: 1, fontStyle:"italic" }}>
+                <Typography variant="body1" sx={{ pl: 1, pr: 1, mb:5, fontStyle:"italic" }}>
                     Ngày {data.date.day} tháng {data.date.month} năm {data.date.year}
                     <br/>
                     {data.date.hour} giờ {data.date.minute} phút.
@@ -34,20 +31,22 @@ const Letter = ({ show, data, showLetter }) => {
                     Gửi Khoa
                     <br/>
                     <br/>
-                    Tớ thấy cậu như thế này: {data.about}
+                    Qua những lần gặp gỡ, ít nhiều, hoặc là tớ chỉ mới quen cậu được vài hôm thui. Tớ đánh giá cậu được {data.handsome} điểm đấy. Mà thôi, cảm nhận của tớ về cậu này: 
+                    <br/>
+                    {data.about}
                     <br/>
                     <br/>
-                    Có lẽ là mấy năm học cấp ba đã kết thúc, tớ chẳng biết nói gì nữa. Chúng ta có kỉ niệm gì không nhỉ:
+                    Mấy năm học cấp ba đã kết thúc, tớ chẳng biết nói gì nữa, thôi thì ngồi ôn lại những gì đã từng là kỉ niệm. Kỉ niệm của chúng ta là đây:
                     <br/>
                     {data.memories}
                     <br/>
                     <br/>
-                    Chà, chúng thật đáng nhớ đúng không. Dù gì cũng sắp ra trường, tớ cũng muốn nhắn cậu rằng:
+                    Chà, chúng thật đáng nhớ đúng không, mà thôi, không nhớ cũng được, keke, nhớ kiến thức để mà ôn thi THPT cho tốt. Nhỡ đâu nhớ hoài thì sao mà thi nhỉ? Dù gì cũng đã ra trường, tớ cũng muốn nhắn cậu rằng:
                     <br/>
                     {data.message}
                     <br/>
                     <br/>
-                    Hãy vẫn đẹp trai nhé! cậu đẹp trai cỡ {data.handsome} điểm đấy.
+                    Hết rùi nè, chắc tớ cũng k viết gì nữa, hi vọng là nó k lỗi để tớ còn gửi được =)))). Đỗ đại học nhaaaaa!!! Bách khoa hoặc là gì cũng được kikiii 😺
                     <br/>
                     <br/>
                     Kí tên
@@ -55,6 +54,14 @@ const Letter = ({ show, data, showLetter }) => {
                     {data.name}.
                 </Typography>
             </CardContent>
+            <CardActionArea>
+            <CardMedia
+              component="img"
+              height="400"
+              image="https://wallpapers.com/images/featured/vmdj9lfm2un8rji3.jpg"
+              alt="Klee"
+            />
+          </CardActionArea>
         </Card>
       </div>
     </Collapse>

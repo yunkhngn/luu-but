@@ -45,7 +45,8 @@ const Submit = ({
     setShow(false);
     setShowLetter(true);
     setAvailable(false);
-
+    //scroll to top, smooth
+    window.scrollTo({ top: 0, behavior: "smooth" });
     //get date
     const date = new Date();
     const day = date.getDate();
@@ -104,7 +105,7 @@ const Submit = ({
           <CardActionArea>
             <CardMedia
               component="img"
-              height="194"
+              height="400"
               image={dc.submit.image}
               alt="Klee"
             />

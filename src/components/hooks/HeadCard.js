@@ -23,7 +23,7 @@ const HeadCard = ({ show, setShow, available, setShowLetter, showLetter }) => {
         <CardActionArea>
           <CardMedia
             component="img"
-            height="194"
+            height="100%"
             image={dc.headCard.image}
             alt="Letter image"
           />
