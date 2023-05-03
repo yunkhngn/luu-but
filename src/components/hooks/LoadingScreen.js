@@ -17,7 +17,7 @@ const LoadingScreen = () => {
                     justifyContent: 'center',
                     height: '100vh',
                     width: '100vw',
-                    backgroundColor: 'white'
+                    backgroundColor: '#121212'
                 }}
             >
                 <CircularProgress

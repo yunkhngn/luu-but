@@ -15,7 +15,7 @@ import dc from "../lib/DataConfig";
 const Thanks = ({ show, data, available }) => {
   return (
     <Collapse in={!show & !available}>
-      <div className="letter-container">
+      <div className="thanks-container">
         <Card
           variant="outlined"
           sx={{

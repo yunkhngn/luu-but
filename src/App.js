@@ -10,6 +10,7 @@ import {
   LoadingScreen,
   AboutMe,
   Letter,
+  Theme,
 } from "./components/hooks";
 import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
@@ -45,7 +46,7 @@ function App() {
   console.log("Is on development environment: ", onDevelopmentEnv)
 
   return (
-    <div className="App">
+    <Theme>
       <LoadingScreen />
       <HeadCard show={show}
         setShow={setShow}
@@ -73,7 +74,7 @@ function App() {
         setAvailable={setAvailable}
         setShowLetter={setShowLetter} />
       <Analytics />
-    </div>
+    </Theme>
   );
 }
 
