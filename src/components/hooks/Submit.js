@@ -94,9 +94,12 @@ const Submit = ({setShowLetter, onDevelopmentEnv, setShow, setData, data, setAva
           >
             <Typography variant="body1" sx={{ pl: 1, pr: 1 , mb: 1}}>
               {dc.submit.content}
+              <br/>
+              <br/>
+              {dc.submit.content2}
             </Typography>
             <ReCAPTCHA
-              sitekey="6LeRHNAlAAAAAD-DMCbFy1ZcTpgnuv-6QGIxnWH-"
+              sitekey="6LfrgtslAAAAAO-UfwWamzGtH1lK3lCyWkBjya6F"
               onChange={() => setAuthen(true)}
             />
           </CardContent>

@@ -11,27 +11,18 @@ import ThemeButton from "./ThemeButton";
 const Theme = ({ children }) => {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     const [modeTheme, setMode] = React.useState(prefersDarkMode);
-
     const theme = React.useMemo(
       () =>
         createTheme({
           palette: {
             mode: modeTheme ? 'dark' : 'light',
-            //make the background card red
-            // primary: {
-            //   // main: modeTheme ? '#ff0000' : '#0000ff',
-            // },
-            // secondary:{
-
-            // // },
-            // defaultBg: {
-            //   default: modeTheme ? '#000000' : '#ffffff',
-            // }
+            backgroundColor: {
+              default: modeTheme ? 'dark' : 'white',
+            },
           },
         }),
       [modeTheme],
     );
-
   return (
     <ThemeProvider theme={theme}>
         <CssBaseline />

@@ -12,7 +12,7 @@ Project được hoàn thiện vào cuối năm học 2023 để làm lưu bút 
 - [ ] Hoàn thiện nội dung.
 ### Feature:
 > NOTE: Các feature đang và sẽ được xây dựng.
-- [ ] Thay cái nền đẹp cho web.
+- [X] Thay cái nền đẹp cho web.
 - [ ] Làm cái music player.
 - [X] Phần submit, thay vì hiện submit luôn. Thì nhập đủ nội dung tự động hiện.
 - [ ] Notification khi send thành công
