@@ -1,22 +1,15 @@
 import {React, useEffect, useState} from "react";
-
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
 import Nhac from "./nhac.mp3";
 import {Button, CardActionArea } from '@mui/material'
 
 const useAudio = url => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
 
   const toggle = () => { setPlaying(!playing); };
 
@@ -33,11 +26,9 @@ const useAudio = url => {
   );
 
   useEffect(() => {
-    audio.addEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
     audio.addEventListener('ended', () => setPlaying(false));
 
     return () => {
-      audio.removeEventListener('timeupdate', () => setCurrentTime(audio.currentTime));
       audio.removeEventListener('ended', () => setPlaying(false));
     };
   }, [audio]);
@@ -46,7 +37,6 @@ const useAudio = url => {
 };
 
 const MusicPlayer = () => {
-  const theme = useTheme();
   const [playing, toggle, replay] = useAudio(Nhac);
   return (
     <div className="music-container">

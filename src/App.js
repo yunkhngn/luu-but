@@ -40,7 +40,7 @@ function App() {
       setData(JSON.parse(localData));
       setAvailable(false);
     }
-  }, []);
+  }, [localData]);
   console.clear();
   console.log("Data: ", data);
   console.log("Is on development environment: ", onDevelopmentEnv)
