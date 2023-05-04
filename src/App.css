@@ -44,12 +44,12 @@ html{
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .App{
-    width: 60%;
+    width: 50%;
     padding-top: 3em;
   }
 }
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+
+@media only screen and (min-width: 1450px) {
   .App{
     width: 35%;
     padding-top: 3em;
