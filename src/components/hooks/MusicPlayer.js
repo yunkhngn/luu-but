@@ -54,7 +54,7 @@ const MusicPlayer = () => {
         <Box sx={{ml:{md:'1em'}, mt:{xs:'1em'}, display: "flex", flexDirection: "column" , justifyContent:"center", alignItems:"center", width:'100%'}}>
           <CardContent sx={{width:'95%', justifyContent:"center", alignItems:"center"}}>
             <Typography component="div" variant="h5">
-              Cá hồi (Hoang)
+              Cá hồi (hoang) 🍥
             </Typography>
             <Typography
               variant="subtitle1"

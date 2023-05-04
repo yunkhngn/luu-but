@@ -22,28 +22,31 @@ const Letter = ({ show, data, showLetter }) => {
             <CardContent
                 sx={{pt: 3, pb: 3 }}
             >
-                <Typography variant="body1" sx={{ pl: 1, pr: 1, mb:5, fontStyle:"italic" }}>
-                    Ngày {data.date.day} tháng {data.date.month} năm {data.date.year}
+                <Typography variant="body1" sx={{ pl: 1, pr: 1, mb:5 }}>
+                    <i>Ngày {data.date.day} tháng {data.date.month} năm {data.date.year}
                     <br/>
-                    {data.date.hour} giờ {data.date.minute} phút.
+                    {data.date.hour} giờ {data.date.minute} phút.</i>
                     <br/>
                     <br/>
-                    Gửi Khoa
+                    Gửi <strong>Khoa</strong>
                     <br/>
                     <br/>
                     Qua những lần gặp gỡ, ít nhiều, hoặc là tớ chỉ mới quen cậu được vài hôm thui. Tớ chấm cậu được {data.handsome} điểm đó. Mà thôi, cảm nhận của tớ về cậu này: 
                     <br/>
-                    {data.about}
+                    <br/>
+                    <i>{data.about}</i>
                     <br/>
                     <br/>
                     Mấy năm học cấp ba đã kết thúc, tớ chẳng biết nói gì nữa, thôi thì ngồi ôn lại những gì đã từng là kỉ niệm. Kỉ niệm của chúng ta là đây:
                     <br/>
-                    {data.memories}
+                    <br/>
+                    <i>{data.memories}</i>
                     <br/>
                     <br/>
                     Chà, chúng thật đáng nhớ đúng không, mà thôi, không nhớ cũng được, keke, nhớ kiến thức để mà ôn thi THPT cho tốt. Nhỡ đâu nhớ hoài thì sao mà thi nhỉ? Dù gì cũng đã ra trường, tớ cũng muốn nhắn cậu rằng:
                     <br/>
-                    {data.message}
+                    <br/>
+                    <i>{data.message}</i>
                     <br/>
                     <br/>
                     Hết rùi nè, chắc tớ cũng k viết gì nữa, hi vọng là nó k lỗi để tớ còn gửi được =)))). Đỗ đại học nhaaaaa!!! Bách khoa hoặc là gì cũng được kikiii 😺
@@ -51,7 +54,7 @@ const Letter = ({ show, data, showLetter }) => {
                     <br/>
                     Kí tên
                     <br/>
-                    {data.name}.
+                    <strong>{data.name}</strong>.
                 </Typography>
             </CardContent>
             <CardActionArea>
