@@ -120,12 +120,12 @@ const Submit = ({
               {dc.submit.content2}
             </Typography>
             <Box sx={{ pl: 1, pr: 1 }}>
-              <HCaptcha
+              {!onDevelopmentEnv && <HCaptcha
                 sitekey="31677f64-0983-4d5f-afcf-bcb06e4a6bc6"
                 onVerify={(token, ekey) => {
                   setAuthen(true);
                 }}
-              ></HCaptcha>
+              ></HCaptcha>}
             </Box>
           </CardContent>
           <CardActions sx={{ pl: 3, pr: 3, pb: 3, pt: 3 }}>
