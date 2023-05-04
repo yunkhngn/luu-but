@@ -28,7 +28,7 @@ const Letter = ({ show, data, showLetter }) => {
                     {data.date.hour} giờ {data.date.minute} phút.</i>
                     <br/>
                     <br/>
-                    Gửi <strong>Khoa</strong>
+                    Gửi<strong> Khoa</strong>
                     <br/>
                     <br/>
                     Qua những lần gặp gỡ, ít nhiều, hoặc là tớ chỉ mới quen cậu được vài hôm thui. Tớ chấm cậu được {data.handsome} điểm đó. Mà thôi, cảm nhận của tớ về cậu này: 
