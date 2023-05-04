@@ -74,7 +74,7 @@ function App() {
         setAvailable={setAvailable}
         setShowLetter={setShowLetter} />
       <Analytics />
-      {(data.name || data.about || data.message || data.memories) && <WarnBeforeUnload />}
+      {(data.name || data.about || data.message || data.memories) && available && <WarnBeforeUnload />}
     </Theme>
   );
 }

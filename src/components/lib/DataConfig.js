@@ -26,8 +26,8 @@ const dc = {
         label: {
             one: "Tồi",
             fouth: "Hong bit",
-            sixth: "Cũng được",
-            full: "Rất đỉnh kout",
+            sixth: "Ok",
+            full: "Đỉnh",
         }
     },
     memories: {
