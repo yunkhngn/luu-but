@@ -10,6 +10,7 @@ import {
   AboutMe,
   Letter,
   Theme,
+  WarnBeforeUnload
 } from "./components/hooks";
 import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
@@ -43,7 +44,7 @@ function App() {
   console.clear();
   console.log("Data: ", data);
   console.log("Is on development environment: ", onDevelopmentEnv)
-
+  
   return (
     <Theme>
       <HeadCard show={show}
@@ -73,6 +74,7 @@ function App() {
         setAvailable={setAvailable}
         setShowLetter={setShowLetter} />
       <Analytics />
+      {(data.name || data.about || data.message || data.memories) && <WarnBeforeUnload />}
     </Theme>
   );
 }
