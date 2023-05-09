@@ -50,6 +50,9 @@ const dc = {
         content2:"Còn một bước nữa thôi nè là xong ròi. Site tớ dùng để gửi form nên để tránh spam, cậu xác nhận captcha bên dưới nè. Biết đâu lại là robot 🤖.",
         button: "Gửi cho tớ lunnn",
     },
+    copyright:{
+        copyright:"Khoa"
+    }
 }
 
 export default dc;
