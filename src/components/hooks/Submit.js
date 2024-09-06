@@ -69,8 +69,8 @@ const Submit = ({
     //email về email
     if (!onDevelopmentEnv) {
       emailjs.send(
-        "service_bvxrtbi",
-        "template_dj51y99",
+        process.env.REACT_APP_SERVICE,
+        process.env.REACT_APP_TEMPLATE,
         {
           name: { data }.data.name,
           date_day: { time }.time.day,
@@ -83,7 +83,7 @@ const Submit = ({
           message: { data }.data.message,
           point: { data }.data.handsome,
         },
-        "6mpYFhaV6lVgQsngg"
+        process.env.REACT_APP_CODE
       );
     }
   };
