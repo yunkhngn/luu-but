@@ -40,13 +40,13 @@ const MusicPlayer = () => {
   const [playing, toggle, replay] = useAudio(Nhac);
   return (
     <div className="music-container">
-      <Card variant="outlined" sx={{ display: {md:"flex", sm:"block"}, p:2, justifyContent:"left" }}>
+      <Card variant="outlined" sx={{ display: {md:"flex", sm:"block"}, p:2, justifyContent:"center" }}>
       <CardActionArea
-      sx={{ width: {md:"250px",xs:"100%"}, borderRadius: 1 , aspectRatio:"1/1"}}
+      sx={{ width: {md:"200px",xs:"100%"}, height:{md:"200px",xs:"100%"}, borderRadius: 1 , aspectRatio:"1/1", margin:"auto"}}
       >
       <CardMedia
           component="img"
-          sx={{ width: {md:"250px",xs:"100%"}, borderRadius: 1 , aspectRatio:"1/1"}}
+          sx={{ width: {md:"200px",xs:"100%"}, borderRadius: 1 , aspectRatio:"1/1"}}
           image="https://i.pinimg.com/564x/df/68/79/df6879024b8f67c945cf2452db4c5e54.jpg"
           alt="Ngọt"
         />
@@ -71,7 +71,7 @@ const MusicPlayer = () => {
               Một bài nhạc khá là hay mà tớ hay nghe. Thực ra là tớ lười làm cái này nên nó sơ vcl. 🗿
             </Typography>
           </CardContent>
-          <Box sx={{ display: "flex", alignItems: "center", pl: {md:1, xs:0}, pb: 1}}>
+          <Box sx={{ display: "flex", alignItems: "center"}}>
             <Button onClick={toggle}>
               {playing ? "Pause" : "Play"}
             </Button>
