@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 
 const Thanks = ({ show, data, available }) => {
-  // https://wallpapers.com/images/featured/vmdj9lfm2un8rji3.jpg 
   return (
     <Collapse in={!show & !available}>
       <div className="thanks-container">

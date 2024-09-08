@@ -41,10 +41,7 @@ function App() {
       setAvailable(false);
     }
   }, [localData]);
-  console.clear();
-  console.log("Data: ", data);
-  console.log("Is on development environment: ", onDevelopmentEnv)
-  
+
   return (
     <Theme>
       <HeadCard show={show}
